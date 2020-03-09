@@ -24,10 +24,10 @@ SECRET_KEY = "z+-^-_5pod+b1_!l3noh0*c32sij$y!mwkp2b6+tciv)id+j07"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#DEBUG = False
+# DEBUG = False
 
 ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = "*"
+# ALLOWED_HOSTS = "*"
 
 
 # Application definition
@@ -134,3 +134,11 @@ AUTH_USER_MODEL = "users.User"
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 MEDIA_URL = "/media/"
+
+# Email Configuration
+
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = os.environ.get("MAILGUN_USERNAME")
+EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_PASSWORD")
+EMAIL_FROM = "admin@sandboxfb094465428b466496d40901f10682e7.mailgun.org"
