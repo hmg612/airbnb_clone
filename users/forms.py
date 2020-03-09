@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from . import models
 
 
@@ -20,7 +21,15 @@ class LoginForm(forms.Form):
             self.add_error("email", forms.ValidationError("User does not exist"))
 
 
-class SignUpForm(forms.ModelForm):
+class SignUpForm(UserCreationForm):  # forms.ModelForm
+
+    #username = forms.EmailField(label="Email")
+
+    class Meta:
+        model = models.User
+        fields = ("email",)
+
+    """
     class Meta:
         model = models.User
         fields = ("first_name", "last_name", "email")
@@ -43,6 +52,7 @@ class SignUpForm(forms.ModelForm):
         user.username = email
         user.set_password(password)
         user.save()
+    """
 
 
 """
