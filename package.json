@@ -17,6 +17,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
     "tailwindcss": "^1.2.0"
   }
 }
